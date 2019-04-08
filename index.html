@@ -159,7 +159,7 @@
         <ul>
           <li>
             will it be <em>facebook.com</em>
-            or <em>private-identity-provider.org</em>?
+            or <em>identity-provider.gent</em>?
           </li>
         </ul>
       </li>
@@ -279,26 +279,6 @@
     </figure>
   </div>
 
-  <div class="slide" id="open">
-    <h2>
-      Anyone can build or host<br>
-      software for Solid.
-    </h2>
-    <ul>
-      <li class="next">
-        a server at home and/or<br>
-        at your workplace
-      </li>
-      <li class="next">
-        rent server space
-      </li>
-      <li class="next">
-        use one of the<br>
-        free community servers
-      </li>
-    </ul>
-  </div>
-
   <div class="slide" id="server">
     <h2>
       The Solid server acts as a data pod<br>
@@ -308,8 +288,8 @@
       <li class="next">
        a regular Web server
         <ul>
-          <li>with support for access control</li>
-          <li>with support for Linked Data</li>
+          <li>with support for access control and Linked Data</li>
+          <li>open-source versions available</li>
         </ul>
       </li>
       <li class="next">
@@ -383,70 +363,7 @@
     </ul>
   </div>
 
-  <div class="slide" id="past">
-    <h2>
-      The Solid server and several apps exist<br>
-      and are usable for developers.
-    </h2>
-    <ul>
-      <li>
-        <a href="https://github.com/solid/node-solid-server/">Solid server</a>
-        <ul class="next">
-          <li>store your data online with access control</li>
-          <li>
-            free storage at
-            <a href="https://solid.community/">solid.community</a>
-            and
-            <a href="https://inrupt.net/">inrupt.net</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        apps
-        <ul class="next inline">
-          <li><a href="https://github.com/linkeddata/mashlib">data browser</a></li>
-          <li>contacts</li>
-          <li>photos</li>
-          <li>meeting organizer</li>
-          <li>…</li>
-        </ul>
-      </li>
-      <li>
-        libraries
-        <ul class="next inline">
-          <li><a href="https://github.com/solid/solid-auth-client">authentication</a></li>
-          <li><a href="https://github.com/linkeddata/rdflib.js/">data processing</a></li>
-          <li>…</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <div class="slide" id="present">
-    <h2>
-      Solid is transitioning from research project<br>
-      into an ecosystem backed by a start-up.
-    </h2>
-    <ul>
-      <li>
-        MIT has been our home
-        <ul>
-          <li>initial development of server and apps</li>
-        </ul>
-      </li>
-      <li class="next">
-        Inrupt is accelerating development
-        <ul>
-          <li class="next">open up the ecosystem for all</li>
-          <li class="next">maintain common building blocks as open source</li>
-          <li class="next">create tooling for developers</li>
-          <li class="next">offer services and apps</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <div class="slide" id="future">
+  <div class="slide" id="timeline">
     <h2>
       We aim to bring the Solid experience<br>
       to people all over the world.
@@ -537,11 +454,11 @@
     </h2>
     <pre><code>{
   <span class="prefix">"@context":  "https://www.w3.org/ns/activitystreams",</span>
-  "id":        "#ruben-likes-fosdem2019",
+  "id":        "#ruben-likes-ghentjs",
   "type":      "Like",
   "actor":     "<mark>https://ruben.verborgh.org/profile/#me</mark>",
-  "object":    "<mark>https://fosdem.org/2019/#this</mark>",
-  "published": "2019-02-03T09:00:00Z"
+  "object":    "<mark>https://javascript.gent/#this</mark>",
+  "published": "2019-04-10T20:00:00Z"
 }</code></pre>
   </div>
 
@@ -552,11 +469,11 @@
     </h2>
     <pre><code>{
   <span class="prefix">"@context":  "https://www.w3.org/ns/activitystreams",</span>
-  "id":        "#ruben-likes-fosdem2019",
+  "id":        "#ruben-likes-ghentjs",
   "<mark>type</mark>":      "<mark>Like</mark>",
   "<mark>actor</mark>":     "https://ruben.verborgh.org/profile/#me",
-  "<mark>object</mark>":    "https://fosdem.org/2019/#this",
-  "<mark>published</mark>": "2019-02-03T09:00:00Z"
+  "<mark>object</mark>":    "https://javascript.gent/#this",
+  "<mark>published</mark>": "2019-04-10T20:00:00Z"
 }</code></pre>
   </div>
 
@@ -570,13 +487,13 @@
   <span class="prefix">"@graph":</span> [{
     "type":      "Like",
     "actor":     <mark>"https://ruben.verborgh.org/profile/#me"</mark>,
-    "object":    "https://fosdem.org/2019/#this",
-    "published": "2019-02-03T09:00:00Z"
+    "object":    "https://javascript.gent/#this",
+    "published": "2019-04-10T20:00:00Z"
   },{
     "type":      "Like",
-    "actor":     <mark>"https://example.org/people/silvia#me"</mark>,
-    "object":    "https://fosdem.org/2019/#this",
-    "published": "2019-02-03T09:05:00Z"
+    "actor":     <mark>"https://example.org/people/klaas#me"</mark>,
+    "object":    "https://javascript.gent/#this",
+    "published": "2019-04-10T20:05:00Z"
   }]
 }</code></pre>
   </div>
