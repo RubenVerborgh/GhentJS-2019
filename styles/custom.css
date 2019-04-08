@@ -2,6 +2,10 @@
   --accent: #3a2d72;
 }
 
+.slide.title h2 {
+  font-size: 1.66em;
+}
+
 .shower .caption p {
   margin-top: .5em;
 }
