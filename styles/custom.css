@@ -1,9 +1,6 @@
 .shower {
   --accent: #3a2d72;
-}
-
-.slide.title h2 {
-  font-size: 1.66em;
+  --highlight: #d76016;
 }
 
 .shower .caption p {
@@ -16,6 +13,27 @@ p.venue {
 
 ul.inline li {
   white-space: nowrap;
+}
+
+.slide.title h2 {
+  font-size: 1.66em;
+}
+
+.slide.intro p {
+  margin-top: 3.5em;
+  font-size: 2em;
+  line-height: 1.1;
+  text-indent: -.8ex;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.slide.intro p strong {
+  color: var(--highlight);
+  font-style: italic;
+}
+.slide.intro p em {
+  color: black;
 }
 
 .slide pre {
