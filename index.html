@@ -76,9 +76,9 @@
     <pre><code>
 
 
-# List 10 people and their names
+# List 50 people and their names
 <span class="next">{
-  person(first:10) {
+  person(first:50) {
     name
   }
 }</span></code></pre>
@@ -92,9 +92,9 @@
     <pre><code>
 
 
-# List 10 people and their names
+# List 50 people and their names
 {
-  users(first:10) {
+  users(first:50) {
     fullName
   }
 }</code></pre>
@@ -108,7 +108,7 @@
     <pre><code>
 
 
-# List 10 people and their names
+# List 50 people and their names
 {
   friends(first:10) {
     displayName
@@ -124,12 +124,12 @@
     <pre><code><span class="prefix">PREFIX dbo:  &lt;http://dbpedia.org/ontology/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
-# List 10 people and their names
+# List 50 people and their names
 SELECT * {
   ?person a dbo:Person;
           rdfs:label ?name.
 }
-LIMIT 10</code></pre>
+LIMIT 50</code></pre>
   </div>
 
   <div class="slide" id="client-side">
@@ -137,7 +137,7 @@ LIMIT 10</code></pre>
       We can separate language from API:<br>
       this query runs partially <em>client-side</em>.
     </h2>
-    <iframe class="query-client" src="comunica/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen&query=SELECT%20*%20%7B%0A%20%20%3Fperson%20a%20dbo%3APerson%3B%0A%20%20%20%20%20%20%20%20%20%20rdfs%3Alabel%20%3Fname.%0A%7D%0ALIMIT%2010"></iframe>
+    <iframe class="query-client" src="comunica/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen&query=PREFIX%20dbo%3A%20%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0A%23%20List%2050%20people%20and%20their%20names%0ASELECT%20*%20%7B%0A%20%20%3Fperson%20a%20dbo%3APerson%3B%0A%20%20%20%20%20%20%20%20%20%20rdfs%3Alabel%20%3Fname.%0A%7D%0ALIMIT%2050"></iframe>
   </div>
 
   <div class="slide" id="multiple-sources">
@@ -145,7 +145,7 @@ LIMIT 10</code></pre>
       The client-side engine especially shines<br>
       when executing <em>cross-API</em> queries.
     </h2>
-    <iframe class="query-client" src="comunica/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen;http%3A%2F%2Fdata.linkeddatafragments.org%2Fviaf;http%3A%2F%2Fdata.linkeddatafragments.org%2Fharvard&query=SELECT%20%3Fperson%20%3Fname%20%3Fbook%20%3Ftitle%20%7B%0A%20%20%3Fperson%20dbo%3AbirthPlace%20%5B%20rdfs%3Alabel%20%22Amsterdam%22%40en%20%5D.%0A%20%20%3FviafID%20schema%3AsameAs%20%3Fperson%3B%0A%20%20%20%20%20%20%20%20%20%20schema%3Aname%20%3Fname.%0A%20%20%3Fbook%20dc%3Acontributor%20%5B%20foaf%3Aname%20%3Fname%20%5D%3B%0A%20%20%20%20%20%20%20%20dc%3Atitle%20%3Ftitle.%0A%7D"></iframe>
+    <iframe class="query-client" src="comunica/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen;http%3A%2F%2Fdata.linkeddatafragments.org%2Fviaf;http%3A%2F%2Fdata.linkeddatafragments.org%2Fharvard&query=PREFIX%20foaf%3A%20%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%20PREFIX%20dc%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20PREFIX%20schema%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0APREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ASELECT%20%3Fperson%20%3Fname%20%3Fbook%20%3Ftitle%20%7B%0A%20%20%3Fperson%20dbo%3AbirthPlace%20%5B%20rdfs%3Alabel%20%22Ghent%22%40en%20%5D.%0A%20%20%3FviafID%20schema%3AsameAs%20%3Fperson%3B%0A%20%20%20%20%20%20%20%20%20%20schema%3Aname%20%3Fname.%0A%20%20%3Fbook%20dc%3Acontributor%20%5B%20foaf%3Aname%20%3Fname%20%5D%3B%0A%20%20%20%20%20%20%20%20dc%3Atitle%20%3Ftitle.%0A%7D"></iframe>
   </div>
 
   <div class="toc slide" id="toc-decentralization">
