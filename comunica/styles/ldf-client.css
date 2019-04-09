@@ -1,8 +1,9 @@
 /*! @license MIT ©2014–2016 Ruben Verborgh, Ghent University – imec */
 
+@font-face{font-family:'Open Sans';src:local("Open Sans"),local("OpenSans"),url(../../fonts/OpenSans.woff2) format("woff2"),url(../../fonts/OpenSans.woff) format("woff")}@font-face{font-weight:700;font-family:'Open Sans';src:local("Open Sans Bold"),local("OpenSans-Bold"),url(../../fonts/OpenSans.Bold.woff2) format("woff2"),url(../../fonts/OpenSans.Bold.woff) format("woff")}@font-face{font-style:italic;font-family:'Open Sans';src:local("Open Sans Italic"),local("OpenSans-Italic"),url(../../fonts/OpenSans.Italic.woff2) format("woff2"),url(../../fonts/OpenSans.Italic.woff) format("woff")}@font-face{font-style:italic;font-weight:700;font-family:'Open Sans';src:local("Open Sans Bold Italic"),local("OpenSans-BoldItalic"),url(../../fonts/OpenSans.Bold.Italic.woff2) format("woff2"),url(../../fonts/OpenSans.Bold.Italic.woff) format("woff")}@font-face{font-weight:300;font-family:'Open Sans';src:local("Open Sans Light"),local("OpenSans-Light"),url(../../fonts/OpenSans.Light.woff2) format("woff2"),url(../../fonts/OpenSans.Light.woff) format("woff")}@font-face{font-family:'Source Code Pro';src:local("Source Code Pro"),local("SourceCodePro-Regular"),url(../../fonts/SourceCodePro.woff2) format("woff2"),url(../../fonts/SourceCodePro.woff) format("woff")}@font-face{font-weight:700;font-family:'Source Code Pro';src:local("Source Code Pro Bold"),local("SourceCodePro-Bold"),url(../../fonts/SourceCodePro.Bold.woff2) format("woff2"),url(../../fonts/SourceCodePro.Bold.woff) format("woff")}
+
 html {
   font-size: 11pt;
-  background: #f6f6f6;
 }
 html, input, textarea, button, pre {
   font: 1em/1.4 'Open Sans', Verdana, Arial, sans-serif;
@@ -13,18 +14,16 @@ html, input, textarea, button, pre {
 }
 
 body {
-  max-width: 650px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 1em 3em;
-  background: white;
-  box-shadow: 2px 2px 15px 0px rgba(50, 50, 50, 0.75);
+  padding: 0;
 }
 
 a, button, label {
   font-weight: bold;
 }
 a, button, input:hover, label {
-  color: #be1622;
+  color: #3a2d72;
   cursor: pointer;
   text-decoration: none;
 }
@@ -41,7 +40,7 @@ a, button, input:hover, label {
   font-style: italic;
 }
 a:hover {
-  color: #be1622;
+  color: #3a2d72;
   text-decoration: underline;
 }
 
@@ -159,7 +158,7 @@ input.datetime {
 
 textarea {
   box-sizing: border-box;
-  min-height: 11em;
+  min-height: 7em;
   width: 100%;
   padding-left: 1em;
   border: none;
@@ -181,13 +180,13 @@ textarea {
   width: calc(100% - 2px);
 }
 .result dl {
-  border: 1px solid #be1622;
+  border: 1px solid #3a2d72;
   margin: 0 0 1em;
   border-radius: 5px;
 }
 .result dl:hover {
   color: white;
-  background-color: #be1622;
+  background-color: #3a2d72;
 }
 .result dl:after {
   content: "";
@@ -197,7 +196,7 @@ textarea {
 .result dt {
   float: left;
   clear: left;
-  background-color: #be1622;
+  background-color: #3a2d72;
   color: white;
   font-style: normal;
   font-weight: bold;
@@ -520,7 +519,7 @@ li.query-type-graphql {
   background-image: url('../images/graphql.svg');
 }
 li.highlighted {
-  background-color: #be1622;
+  background-color: #3a2d72;
   color: #fff !important;
 }
 li.no-results {
