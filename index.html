@@ -701,6 +701,35 @@ async function printResults(sparql, source) {
     </ul>
   </div>
 
+  <div class="cover slide" id="proxy">
+    <h2>
+      A JavaScript <code>Proxy</code> can make<br>
+      an object behave in any way.
+    </h2>
+    <ul>
+      <li class="next">
+        You want it to behave like an infinite path?
+        <ul class="next">
+          <li>Now it behaves like an infinite path!</li>
+        </ul>
+      </li>
+      <li class="next">
+        You put <code>await</code> in front of it?
+        <ul class="next">
+          <li>Now it behaves like a <code>Promise</code></li>
+          <li>by exposing a <code>then</code> function!</li>
+        </ul>
+      </li>
+      <li class="next">
+        You loop over it with <code>for await</code> … <code>of</code>?
+        <ul class="next">
+          <li>Now it behaves like an <code>AsyncIterable</code></li>
+          <li>by exposing a <code>Symbol.asyncIterator</code> property!</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
   <div class="cover slide" id="react">
     <h2>
       Solid taps into existing experiences<br>
