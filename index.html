@@ -667,15 +667,9 @@ async function printResults(sparql, source) {
   <div class="cover slide" id="ldflex">
     <h2>
       LDflex exposes Linked Data’s flexibility
-      without learning new tricks.
+      without having to learn new tricks.
     </h2>
-    <ul>
-      <li class="next">data.user.name</li>
-      <li class="next">data.user.friends</li>
-      <li class="next">data.user.friends.firstName</li>
-      <li class="next">data.user.friends.friends.firstName</li>
-      <li class="next">data['https://ruben.verborgh.org/profile/#me'].blog</li>
-    </ul>
+    <iframe class="ldflex" src="ldflex/#(async%20()%20%3D%3E%20%7B%0A%20%20const%20%7B%20data%20%7D%20%3D%20solid%3B%0A%20%20const%20thing%20%3D%20await%20data.user.firstName%3B%0A%20%20print(thing)%3B%0A%7D)()%3B"></iframe>
   </div>
 
   <div class="cover slide" id="ldflex-dsl">

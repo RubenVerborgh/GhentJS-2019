@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Solid LDflex JavaScript environment</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+
+  <p id="toolbar">
+    <button id="execute">Execute</button>
+    <button id="login">Login</button>
+    <button id="logout">Logout</button>
+  </p>
+
+  <textarea id="input">
+(async () =&gt; {
+  print("hello world");
+})();</textarea>
+
+  <pre id="output"></pre>
+
+  <script src="scripts/solid-auth-client.bundle.js"></script>
+  <script src="scripts/solid-query-ldflex.bundle.js"></script>
+  <script>
+    const elements = {};
+    'input output execute login logout'.split(/\s+/).forEach(e =>
+      elements[e] = document.getElementById(e));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = decodeURIComponent(window.location.hash.substr(1));
+      if (/\S/.test(input))
+        elements.input.value = input;
+      execute();
+    });
+
+    elements.execute.addEventListener('click', execute);
+
+    elements.input.addEventListener('keydown', ({ keyCode, metaKey, ctrlKey }) =>
+      keyCode === 13 && (metaKey || ctrlKey) && execute());
+
+    elements.login.addEventListener('click', () =>
+      solid.auth.popupLogin({ popupUri: 'popup.html' }));
+
+    elements.logout.addEventListener('click', () =>
+      solid.auth.logout());
+
+    async function execute() {
+      const input = elements.input.value;
+      window.location.hash = `#${encodeURIComponent(input)}`;
+      elements.output.innerText = '';
+      try {
+        await eval(elements.input.value);
+      }
+      catch (error) {
+        print(error);
+      }
+    }
+
+    function print(...args) {
+      elements.output.innerText += args.map(a => `${a}`).join(' ') + `\n`;
+    }
+  </script>
+</body>
+</html>
