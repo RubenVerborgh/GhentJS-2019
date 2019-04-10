@@ -68,6 +68,48 @@
     </ul>
   </div>
 
+  <div class="slide" id="json">
+    <h2>
+      JSON documents only have meaning<br>
+      with respect to <em>one</em> source.
+    </h2>
+    <pre><code>
+{
+
+  "name": "Jane Doe",
+  "jobTitle": "developer",
+  "telephone": "(425) 123-4567"
+}</code></pre>
+  </div>
+
+  <div class="slide" id="jsonld">
+    <h2>
+      JSON-LD documents only have meaning<br>
+      with respect to <em>entire Web</em>.
+    </h2>
+    <pre><code>
+{
+  <span class="prefix">"@context": "http://schema.org/",</span>
+  "name": "Jane Doe",
+  "jobTitle": "developer",
+  "telephone": "(425) 123-4567"
+}</code></pre>
+  </div>
+
+  <div class="slide" id="jsonld-urls">
+    <h2>
+      JSON-LD uses URLs under the hood<br>
+      to create universal meaning.
+    </h2>
+    <pre><code>
+{
+  <span class="prefix">"@context": "http://schema.org/",</span>
+  "<a href="http://schema.org/name">http://schema.org/name</a>": "Jane Doe",
+  "<a href="http://schema.org/jobTitle">http://schema.org/jobTitle</a>": "developer",
+  "<a href="http://schema.org/telephone">http://schema.org/telephone</a>": "(425) 123-4567"
+}</code></pre>
+  </div>
+
   <div class="slide" id="graphql-one-source">
     <h2>
       GraphQL queries only have meaning<br>
@@ -177,7 +219,7 @@ async function printResults(sparql, source) {
       Comunica especially shines when<br>
       executing queries across multiple APIs.
     </h2>
-    <iframe class="query-client" src="comunica/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen;http%3A%2F%2Fdata.linkeddatafragments.org%2Fviaf;http%3A%2F%2Fdata.linkeddatafragments.org%2Fharvard&query=PREFIX%20foaf%3A%20%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%20PREFIX%20dc%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20PREFIX%20schema%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0APREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A%0ASELECT%20%3Fperson%20%3Fname%20%3Fbook%20%3Ftitle%20%7B%0A%20%20%3Fperson%20dbo%3AbirthPlace%20%5B%20rdfs%3Alabel%20%22Ghent%22%40en%20%5D.%0A%20%20%3FviafID%20schema%3AsameAs%20%3Fperson%3B%0A%20%20%20%20%20%20%20%20%20%20schema%3Aname%20%3Fname.%0A%20%20%3Fbook%20dc%3Acontributor%20%5B%20foaf%3Aname%20%3Fname%20%5D%3B%0A%20%20%20%20%20%20%20%20dc%3Atitle%20%3Ftitle.%0A%7D"></iframe>
+    <iframe class="query-client" src="comunica/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen;http%3A%2F%2Fdata.linkeddatafragments.org%2Fviaf;http%3A%2F%2Fdata.linkeddatafragments.org%2Fharvard&query=SELECT%20%3Fperson%20%3Fname%20%3Fbook%20%3Ftitle%20%7B%0A%20%20%3Fperson%20dbpedia-owl%3AbirthPlace%20%5B%20rdfs%3Alabel%20%22Ghent%22%40en%20%5D.%0A%20%20%3FviafID%20schema%3AsameAs%20%3Fperson%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20schema%3Aname%20%3Fname.%0A%20%20%3Fbook%20dc%3Acontributor%20%5B%20foaf%3Aname%20%3Fname%20%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20dc%3Atitle%20%3Ftitle.%0A%7D"></iframe>
   </div>
 
   <div class="toc slide" id="toc-decentralization">
